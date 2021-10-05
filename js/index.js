@@ -1,4 +1,4 @@
-import {suma} from './operations.js'
+import {suma, restar, multiplicar} from './operations.js'
 
 let numberOne = document.querySelector("#numberOne");
 let numberTwo = document.querySelector("#numberTwo");
@@ -12,7 +12,11 @@ function generateCalculations(){
     let number1 = parseInt(numberOne.value);
     let number2 = parseInt(numberTwo.value);
 
-    alert(suma(number1,number2))
+    console.log("La suma es " + suma(number1,number2));
+
+    console.log("La resta es " + restar(number1,number2));
+
+    console.log("La multiplicacion es " + multiplicar(number1,number2))
 
 }
 
