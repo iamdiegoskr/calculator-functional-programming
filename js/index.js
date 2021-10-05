@@ -1,4 +1,4 @@
-import {suma, restar, multiplicar} from './operations.js'
+import {suma, restar, multiplicar, division} from './operations.js'
 
 let numberOne = document.querySelector("#numberOne");
 let numberTwo = document.querySelector("#numberTwo");
@@ -9,19 +9,27 @@ let button = document.querySelector("#btn-calculate");
 
 
 function generateCalculations(){
-    let number1 = parseInt(numberOne.value);
-    let number2 = parseInt(numberTwo.value);
 
-    console.log("La suma es " + suma(number1,number2));
+    if(numberOne.value!="" && numberTwo.value!=""){
 
-    console.log("La resta es " + restar(number1,number2));
+        let number1 = parseInt(numberOne.value);
+        let number2 = parseInt(numberTwo.value);
 
-    console.log("La multiplicacion es " + multiplicar(number1,number2))
+        return `
+            La suma es ${suma(number1,number2)} \n
+            La resta es ${restar(number1,number2)} \n
+            La multiplicacion es ${multiplicar(number1,number2)} \n
+            La division es ${division(number1,number2,0,suma,restar)}
+        `
+
+    }
+
+    return "Debe ingresar los dos numeros"
 
 }
 
 
 
 button.addEventListener("click",(event)=>{
-    generateCalculations()
+    alert(generateCalculations())
 })
